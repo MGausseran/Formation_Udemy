@@ -35,16 +35,20 @@ console.log(appartementDeMartin.propriétaire);
 //Créer un objet avec Object 
 
 class Animal {
-    constructor(nombreDePattes, poids, espece){
+    constructor(nombreDePattes, poids, espece, cri){
         this.nombreDePattes = nombreDePattes;
         this.poidsenKg = poids;
         this.espece = espece;
+        this.cri = cri
+    }
+    crier() {
+        console.log(this.cri);
     }
 }
 
 class Mammifère extends Animal {
-    constructor(nombreDePattes, poids, espece, typeDePoils) {
-        super(nombreDePattes, poids, espece)
+    constructor(nombreDePattes, poids, espece, cri, typeDePoils) {
+        super(nombreDePattes, poids, espece, cri)
         this.typeDePoils = typeDePoils;
     }
 }
@@ -56,8 +60,9 @@ class Oiseau extends Animal {
     }
 }
 
-let lapin = new Mammifère(4, 3, "lagomorphe", "longs");
+let lapin = new Mammifère(4, 3, "lagomorphe", "kouik kouik", "longs", );
 let perruche = new Oiseau(2, 0.5, 15);
 
+lapin.crier();
 console.log(lapin);
 console.log(perruche);
