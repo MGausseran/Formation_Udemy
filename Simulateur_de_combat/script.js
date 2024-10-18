@@ -4,31 +4,30 @@ class Character {
         this.health = health;
         this.weapon = weapon;
         this.might = might;
-        this.type=type;
+        this.type = type;
     }
 
     getStats(statsSection) {
         const nameParagraph = document.createElement('h2')
-            nameParagraph.textContent = this.name;
+        nameParagraph.textContent = this.name;
         const healthParagraph = document.createElement('p');
-            healthParagraph.textContent = this.health;
-            healthParagraph.style.color='#fff';
-            healthParagraph.style.border = "solid 2px white"
-            healthParagraph.style.backgroundColor = '#9c0e0e';
-            healthParagraph.style.width = '20vw';
+        healthParagraph.textContent = this.health;
+        healthParagraph.style.color = '#fff';
+        healthParagraph.style.border = "solid 2px white"
+        healthParagraph.style.backgroundColor = '#9c0e0e';
+        healthParagraph.style.width = '20vw';
         const weaponImage = document.createElement('img');
-            weaponImage.src = `./images/${this.weapon}.png`;
-            weaponImage.alt = `${this.weapon}`;
-            weaponImage.style.width = '5vw';
+        weaponImage.src = `./images/${this.weapon}.png`;
+        weaponImage.alt = `${this.weapon}`;
+        weaponImage.style.width = '5vw';
         statsSection.innerHTML = '';
-        
+
         statsSection.appendChild(nameParagraph);
         statsSection.appendChild(healthParagraph);
         statsSection.appendChild(weaponImage);
     }
 }
 
-const types = ['human', 'animal', 'monster', 'boss'];
 const charactersList = [
     new Character('Ulfric Stormcloak', 150, 'close_combat', 200, 'human'),
     new Character('Delphine', 100, 'close_combat', 70, 'human'),
@@ -111,11 +110,47 @@ const charactersList = [
     new Character('Farengar Secret-Fire', 90, 'magic', 60, 'human'),
 ];
 
+const firstSubList = document.querySelector('.first_sublist_container');
+const firstListOfTypes = document.querySelector('.first_opponent_selector')
+const secondSubList = document.querySelector('.second_sublist_container');
+const secondListOfTypes = document.querySelector('.second_opponent_selector')
 
+function selectType(listOfTypes, subList) {
+    const selectedType = event.target.value;
+    subList.innerHTML = '';
+    charactersList.forEach(character => {
+        let characterType = character.type;
+        if (characterType === selectedType) {
+            const characterName = document.createElement('option');
+            characterName.textContent = character.name;
+            subList.appendChild(characterName);
+        }
+    })
+}
+
+firstListOfTypes.addEventListener('change', () => {
+    selectType(firstListOfTypes, firstSubList);
+});
+
+secondListOfTypes.addEventListener('change', () => {
+    selectType(secondListOfTypes, secondSubList);
+});
 
 const firstStatsSection = document.querySelector('.first_opponent_column .stats');
 const secondStatsSection = document.querySelector('.second_opponent_column .stats');
 
-let Marie = new Character('Marie', 100, 'distance', 100);
-charactersList[41].getStats(firstStatsSection);
-Marie.getStats(secondStatsSection);
+function displayStats(subList, statsSection) {
+    const selectedName = subList.value;
+    const selectedCharacter = charactersList.find(character => character.name === selectedName);
+    if (selectedCharacter) {
+        selectedCharacter.getStats(statsSection);
+    }
+}
+
+firstSubList.addEventListener('change', () => {
+    displayStats(firstSubList, firstStatsSection);
+});
+
+secondSubList.addEventListener('change', () => {
+    displayStats(secondSubList, secondStatsSection);
+});
