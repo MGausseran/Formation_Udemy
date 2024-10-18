@@ -165,7 +165,13 @@ secondSubList.addEventListener('click', () => {
 });
 
 //On lance le combat
+// On désigne un élément pour afficher les résultats du combat
+const fightResultsDiv = document.querySelector('.fight_results');
+
+// On met à jour la fonction fight pour afficher les résultats dans le div
 function fight() {
+    
+    const fightSound = new Audio('./sounds/fusrohdah.mp3');
     firstOpponentName = firstSubList.value;
     secondOpponentName = secondSubList.value;
 
@@ -180,23 +186,23 @@ function fight() {
         let secondOpponentHealth = secondOpponent.health;
         let secondOpponentmight = secondOpponent.might;
         let coinTossed = Math.floor(Math.random() * 2);
-        alert(coinTossed);
+        
+        // Lancer le son avant le combat
+        fightSound.play();
 
         while (firstOpponentHealth > 0 && secondOpponentHealth > 0) {
-            fightResult += ('Round #' + round)
+            fightResult += 'Round #' + round + '<br>';
             if (coinTossed === 0) {
                 secondOpponentHealth -= firstOpponentmight;
-                alert(secondOpponentName + ' attaque ' + firstOpponentName + ' et lui inflige' + secondOpponentmight + ' points de dégâts.');
-            }
-            else {
+                fightResult += secondOpponentName + ' attaque ' + firstOpponentName + ' et lui inflige ' + secondOpponentmight + ' points de dégâts.<br>';
+            } else {
                 firstOpponentHealth -= secondOpponentmight;
-                alert(firstOpponentName + ' attaque ' + secondOpponentName + ' et lui inflige' + firstOpponentmight + ' points de dégâts.');
+                fightResult += firstOpponentName + ' attaque ' + secondOpponentName + ' et lui inflige ' + firstOpponentmight + ' points de dégâts.<br>';
             }
-
+            round++;
         }
-
+        fightResultsDiv.innerHTML = fightResult;
     }
-
 }
 
 let fightButton = document.querySelector('.fight_button');
