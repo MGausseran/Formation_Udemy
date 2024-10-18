@@ -1,0 +1,22 @@
+body {
+    text-align: center;
+    background-image: url(./images/jose-daniel-cabrera-pena-skyrim-the-elder-scrolls-multiplatf.jpg);
+    background-position: center;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+}
+
+.main_container {
+    display: block;
+    width: 50vw;
+    border: solid 5px #324065;
+    border-radius: 10px;
+    background-color: hsl(224, 20%, 70%,0.5);
+    backdrop-filter: blur(3px);
+}
+
+.opponents_columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
