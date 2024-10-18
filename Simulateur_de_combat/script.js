@@ -128,11 +128,11 @@ function selectType(listOfTypes, subList) {
     })
 }
 
-firstListOfTypes.addEventListener('change', () => {
+firstListOfTypes.addEventListener('click', () => {
     selectType(firstListOfTypes, firstSubList);
 });
 
-secondListOfTypes.addEventListener('change', () => {
+secondListOfTypes.addEventListener('click', () => {
     selectType(secondListOfTypes, secondSubList);
 });
 
@@ -147,10 +147,10 @@ function displayStats(subList, statsSection) {
     }
 }
 
-firstSubList.addEventListener('change', () => {
+firstSubList.addEventListener('click', () => {
     displayStats(firstSubList, firstStatsSection);
 });
 
-secondSubList.addEventListener('change', () => {
+secondSubList.addEventListener('click', () => {
     displayStats(secondSubList, secondStatsSection);
 });
