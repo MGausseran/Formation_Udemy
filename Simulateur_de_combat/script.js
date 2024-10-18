@@ -176,9 +176,28 @@ function fight() {
         let round = 1;
         let fightResult = '';
         let firstOpponentHealth = firstOpponent.health;
+        let firstOpponentmight = firstOpponent.might;
         let secondOpponentHealth = secondOpponent.health;
+        let secondOpponentmight = secondOpponent.might;
+        let coinTossed = Math.floor(Math.random() * 2);
+        alert(coinTossed);
 
+        while (firstOpponentHealth > 0 && secondOpponentHealth > 0) {
+            fightResult += ('Round #' + round)
+            if (coinTossed === 0) {
+                secondOpponentHealth -= firstOpponentmight;
+                alert(secondOpponentName + ' attaque ' + firstOpponentName + ' et lui inflige' + secondOpponentmight + ' points de dégâts.');
+            }
+            else {
+                firstOpponentHealth -= secondOpponentmight;
+                alert(firstOpponentName + ' attaque ' + secondOpponentName + ' et lui inflige' + firstOpponentmight + ' points de dégâts.');
+            }
+
+        }
 
     }
 
 }
+
+let fightButton = document.querySelector('.fight_button');
+fightButton.addEventListener('click', fight);
