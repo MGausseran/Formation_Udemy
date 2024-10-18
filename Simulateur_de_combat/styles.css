@@ -5,6 +5,7 @@ body {
     object-fit: cover;
     display: flex;
     justify-content: center;
+    font-family: 'Skyrim Medium';
 }
 
 .main_container {
@@ -21,4 +22,19 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     justify-items: center;
+}
+
+/*Ajout des polices thématiques*/
+@font-face {
+    font-family: 'Skyrim Medium';
+    src: url('./fonts/Typo3-Medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Skryim Normal';
+    src: url('./fonts/typo3Normal.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
