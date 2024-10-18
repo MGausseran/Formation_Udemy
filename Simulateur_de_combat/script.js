@@ -1,3 +1,4 @@
+//On crée tout d'abord une classe Character, qui va définir les propriétés de chaque personnage
 class Character {
     constructor(name, health, weapon, might, type) {
         this.name = name;
@@ -7,6 +8,7 @@ class Character {
         this.type = type;
     }
 
+    //On crée ensuite une fonction getStats, pour afficher dynamiquement en jeu les valeurs des propriétés
     getStats(statsSection) {
         const nameParagraph = document.createElement('h2')
         nameParagraph.textContent = this.name;
@@ -28,6 +30,7 @@ class Character {
     }
 }
 
+//On crée une liste de 100 instances de classe Character en lien avec l'univers de Skyrim
 const charactersList = [
     new Character('Ulfric Stormcloak', 150, 'close_combat', 200, 'human'),
     new Character('Delphine', 100, 'close_combat', 70, 'human'),
@@ -110,11 +113,13 @@ const charactersList = [
     new Character('Farengar Secret-Fire', 90, 'magic', 60, 'human'),
 ];
 
+//On désigne chaque partie de l'HTML
 const firstSubList = document.querySelector('.first_sublist_container');
-const firstListOfTypes = document.querySelector('.first_opponent_selector')
+const firstListOfTypes = document.querySelector('.first_opponent_selector');
 const secondSubList = document.querySelector('.second_sublist_container');
-const secondListOfTypes = document.querySelector('.second_opponent_selector')
+const secondListOfTypes = document.querySelector('.second_opponent_selector');
 
+//On crée une fonction pour récupérer dans subList tous les Character ayant pour type la valeur sélectionnée dans listOfTypes
 function selectType(listOfTypes, subList) {
     const selectedType = event.target.value;
     subList.innerHTML = '';
@@ -128,6 +133,7 @@ function selectType(listOfTypes, subList) {
     })
 }
 
+//Au clic sur la liste, la fonction créée au-dessus se lance
 firstListOfTypes.addEventListener('click', () => {
     selectType(firstListOfTypes, firstSubList);
 });
@@ -136,9 +142,11 @@ secondListOfTypes.addEventListener('click', () => {
     selectType(secondListOfTypes, secondSubList);
 });
 
+//On récupère ici d'autres éléments HTML grâce auxquels nous allons faire afficher les stats des objets Character sélectionnés
 const firstStatsSection = document.querySelector('.first_opponent_column .stats');
 const secondStatsSection = document.querySelector('.second_opponent_column .stats');
 
+//On crée une fonction pour afficher les stats en donnant comme argument à la fonction l'endroit où les afficher
 function displayStats(subList, statsSection) {
     const selectedName = subList.value;
     const selectedCharacter = charactersList.find(character => character.name === selectedName);
@@ -147,6 +155,7 @@ function displayStats(subList, statsSection) {
     }
 }
 
+//On affiche les stats au clic
 firstSubList.addEventListener('click', () => {
     displayStats(firstSubList, firstStatsSection);
 });
@@ -154,3 +163,22 @@ firstSubList.addEventListener('click', () => {
 secondSubList.addEventListener('click', () => {
     displayStats(secondSubList, secondStatsSection);
 });
+
+//On lance le combat
+function fight() {
+    firstOpponentName = firstSubList.value;
+    secondOpponentName = secondSubList.value;
+
+    const firstOpponent = charactersList.find(character => character.name === firstOpponentName);
+    const secondOpponent = charactersList.find(character => character.name === secondOpponentName);
+
+    if (firstOpponent && secondOpponent) {
+        let round = 1;
+        let fightResult = '';
+        let firstOpponentHealth = firstOpponent.health;
+        let secondOpponentHealth = secondOpponent.health;
+
+
+    }
+
+}
