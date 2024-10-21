@@ -2,8 +2,10 @@ body {
     text-align: center;
     background-image: url(./images/jose-daniel-cabrera-pena-skyrim-the-elder-scrolls-multiplatf.jpg);
     background-position: center;
-    background-size: cover;
-    background-repeat: initial;
+    background-clip: border-box;
+    background-origin: content-box;
+    background-attachment: scroll;
+    object-fit: fill;
     display: flex;
     justify-content: center;
     font-family: 'Skyrim Medium';
@@ -13,12 +15,13 @@ body {
 .main_title_text {
     font-size: 5vw;
 }
+
 .main_container {
     display: block;
-    width: 90vw;
+    width: 80vw;
     border: solid 5px #324065;
     border-radius: 10px;
-    background-color: hsl(224, 20%, 70%,0.5);
+    background-color: hsl(224, 20%, 70%, 0.5);
     backdrop-filter: blur(3px);
     padding: 20px;
 }
@@ -42,7 +45,7 @@ body {
 }
 
 .stats {
-    margin:auto;
+    margin: auto;
     justify-items: center;
     text-align: center;
 }
@@ -69,7 +72,7 @@ body {
     padding: 10px;
 }
 
-select option:hover{
+select option:hover {
     background-color: #324065;
 }
 
@@ -84,7 +87,7 @@ select option:hover{
     margin-bottom: 20px;
 }
 
-.fight_button:hover{
+.fight_button:hover {
     background-color: #324095;
     cursor: url(images/Steel_Sword_mini.png), auto;
 }
@@ -106,10 +109,21 @@ select option:hover{
 
 @media (max-width: 600px) {
 
-   
+    body {
+        background-position: top;
+
+    }
 
     .opponents_columns {
         display: block;
-    };
-    
+    }
+
+    .main_title_text {
+        font-size: 8vw;
+    }
+
+    .fight_button {
+        width: 25vw;
+        margin-top: 3vh
+    }
 }
