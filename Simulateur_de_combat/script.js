@@ -205,38 +205,38 @@ function fight() {
             let reachingChance = Math.floor(Math.random() * 100);
             let dodgingChance = 15;
 
-            fightResult += 'Round #' + round + '<br>';
+            fightResult += '<div class="round_counter">Round #' + round + '</div>';
             if (coinTossed === 0) { //Si c'est 'Pile', le premier adversaire attaque
                 if (reachingChance > dodgingChance) { //Si les chances de toucher dépassent les chances d'esquive, alors l'attaque va porter
                     if (criticalStrikeChance <= 20) { //Si le D100 est égal ou inférieur à 20, alors l'attaque sera critique
                         firstOpponentmight = (firstOpponentmight * 1.5) //Une attaque critique multiplie les dégâts de l'attaque par 1.5.
-                        fightResult += 'COUP CRITIQUE ! <br>';
+                        fightResult += '<div class="critical_strike">COUP CRITIQUE !</div>';
                     }
                     secondOpponentHealth -= firstOpponentmight;
-                    fightResult += firstOpponentName + ' attaque ' + secondOpponentName + ' et lui inflige ' + firstOpponentmight + ' points de dégâts !<br>';
+                    fightResult += firstOpponentName + ' attaque ' + secondOpponentName + ' et lui inflige ' + firstOpponentmight + ' points de dégâts !<br><br>';
                     firstOpponentmight = firstOpponent.might; //On réinitialise l'attaque à la valeur de base si il y a eu un bonus critique auparavant
                     if (secondOpponentHealth <= 0) { //On vérifie si l'adversaire a encore des points de vie
-                        fightResult += secondOpponentName + ' est mort.<br>' + firstOpponentName + ' remporte le combat !<br>';
+                        fightResult += '<div class="opponent_killed">' + secondOpponentName + ' est mort.</div>' + '<div class="victory">' + firstOpponentName + ' remporte le combat !</div>';
                         clearInterval(roundInterval); //Sortir de l'intervalle une fois le combat terminé
                         fightResultsDiv.innerHTML = fightResult;
                         return;
                     }
                 }
                 else {
-                    fightResult += secondOpponentName + ' esquive ! L\'attaque de ' + firstOpponentName + ' tape à côté...<br>';
+                    fightResult += secondOpponentName + ' esquive ! L\'attaque de ' + firstOpponentName + ' tape à côté...<br><br>';
                 }
                 round++;
             } else { //Si c'est 'Face', le second adversaire attaque
                 if (reachingChance > dodgingChance) {
                     if (criticalStrikeChance <= 20) {
                         secondOpponentmight = (secondOpponentmight * 1.5)
-                        fightResult += 'COUP CRITIQUE ! <br>';
+                        fightResult += '<div class="critical_strike">COUP CRITIQUE !</div>';
                     }
                     firstOpponentHealth -= secondOpponentmight;
-                    fightResult += secondOpponentName + ' attaque ' + firstOpponentName + ' et lui inflige ' + secondOpponentmight + ' points de dégâts !<br>';
+                    fightResult += secondOpponentName + ' attaque ' + firstOpponentName + ' et lui inflige ' + secondOpponentmight + ' points de dégâts !<br><br>';
                     secondOpponentmight = secondOpponent.might;
                     if (firstOpponentHealth <= 0) { 
-                        fightResult += firstOpponentName + ' est mort.<br>' + secondOpponentName + ' remporte le combat !<br>';
+                        fightResult += '<div class="opponent_killed">' + firstOpponentName + ' est mort.</div>' + secondOpponentName + ' remporte le combat !<br>';
                         clearInterval(roundInterval); //Sortir de l'intervalle une fois le combat terminé
                         fightResultsDiv.innerHTML = fightResult;
                         return;
