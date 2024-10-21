@@ -1,11 +1,11 @@
 body {
     text-align: center;
-    background-image: url(./images/jose-daniel-cabrera-pena-skyrim-the-elder-scrolls-multiplatf.jpg);
-    background-position: center;
+    background-image: url(./images/mountains.webp);
+    /* background-position: center;
     background-clip: border-box;
     background-origin: content-box;
-    background-attachment: scroll;
-    object-fit: fill;
+    background-attachment: scroll; */
+    object-fit: contain;
     display: flex;
     justify-content: center;
     font-family: 'Skyrim Medium';
@@ -19,7 +19,11 @@ body {
 .main_container {
     display: block;
     width: 80vw;
-    border: solid 5px #324065;
+    border: solid 20px;
+    border-image: url(./images/background_stone.jpg);
+    border-image-slice: 30;
+    border-image-repeat: stretch;
+    border-image-outset: 0;
     border-radius: 10px;
     background-color: hsl(224, 20%, 70%, 0.5);
     backdrop-filter: blur(3px);
@@ -81,7 +85,14 @@ select option:hover {
     font-family: 'Skyrim Medium';
     font-weight: 600;
     background-color: #324065;
-    border: white 2px solid;
+    background-image: url(./images/background.webp);
+    background-position: 15%;
+    border-width: 3px;
+    border-style: solid;
+    border-image-source: url('./images/bordure.jpg');
+    border-image-slice: 30;
+    border-image-repeat: stretch;
+    border-image-outset: 0;
     padding: 10px;
     color: white;
     margin-bottom: 20px;
@@ -109,10 +120,10 @@ select option:hover {
 
 @media (max-width: 600px) {
 
-    body {
+    /* body {
         background-position: top;
 
-    }
+    } */
 
     .opponents_columns {
         display: block;
