@@ -3,9 +3,11 @@ body {
     background-image: url(./images/jose-daniel-cabrera-pena-skyrim-the-elder-scrolls-multiplatf.jpg);
     background-position: center;
     background-size: cover;
+    background-repeat: initial;
     display: flex;
     justify-content: center;
     font-family: 'Skyrim Medium';
+    padding: 0;
 }
 
 .main_title_text {
@@ -13,7 +15,7 @@ body {
 }
 .main_container {
     display: block;
-    width: 50vw;
+    width: 90vw;
     border: solid 5px #324065;
     border-radius: 10px;
     background-color: hsl(224, 20%, 70%,0.5);
@@ -86,6 +88,7 @@ select option:hover{
     background-color: #324095;
     cursor: url(images/Steel_Sword_mini.png), auto;
 }
+
 /*Ajout des polices thématiques*/
 @font-face {
     font-family: 'Skyrim Medium';
@@ -99,4 +102,14 @@ select option:hover{
     src: url('./fonts/typo3Normal.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+}
+
+@media (max-width: 600px) {
+
+   
+
+    .opponents_columns {
+        display: block;
+    };
+    
 }
