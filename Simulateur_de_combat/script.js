@@ -14,7 +14,7 @@ class Character {
         nameParagraph.textContent = this.name;
         const healthParagraph = document.createElement('p');
         healthParagraph.textContent = this.health;
-        healthParagraph.style.color = '#fff';
+        healthParagraph.style.color = 'snow';
         healthParagraph.style.border = "solid 2px white"
         healthParagraph.style.backgroundColor = '#9c0e0e';
         healthParagraph.style.width = '15vw';

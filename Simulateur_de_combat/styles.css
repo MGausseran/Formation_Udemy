@@ -68,12 +68,20 @@ body {
 }
 
 .round_counter {
+    font-family: 'Cinzel Bold';
     font-weight: 900;
     background-image: url(./images/metal2.jpg);
     background-size: cover;
-    background-position: 5%;
-    color: black;
+    background-position: 100%;
+    color: white;
     margin : 0 3px;
+    padding: 3vh;
+    font-size: 2vw;
+    text-shadow: 
+        -1px -1px 0 #000, /* ombre en haut à gauche */
+        1px -1px 0 #000,  /* ombre en haut à droite */
+        -1px 1px 0 #000,  /* ombre en bas à gauche */
+        1px 1px 0 #000;   /* ombre en bas à droite */
 }
 
 .opponent_killed {
@@ -128,10 +136,20 @@ select option:hover {
     
 }
 .event_in_fight {
-    background-image: url(./images/bois_chaud.jpg);
+    /* background-image: url(./images/bois_chaud.jpg);
     background-size: cover;
-    padding: 10px 0;
+    background-position: 99%; */
+    padding: 20px 0;
+    font-size: 2vw;
     margin : 0 3px;
+    font-family: 'Cinzel Medium';
+    font-weight: 400;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 black, /* ombre en haut à gauche */
+        1px -1px 0 black,  /* ombre en haut à droite */
+        -1px 1px 0 black,  /* ombre en bas à gauche */
+        1px 1px 0 black;   /* ombre en bas à droite */
 }
 
 /*Ajout des polices thématiques*/
