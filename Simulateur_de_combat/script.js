@@ -280,6 +280,14 @@ eventContainer.addEventListener('click', (event) => {
     }
 });
 
+//Son de coup contre le métal
+opponentsContainer = document.querySelector('.opponents_columns');
+let metalSound = new Audio('./sounds/metal.mp3');
+opponentsContainer.addEventListener('click', () => {
+    metalSound.currentTime=0;
+    metalSound.play();
+});
+
 //Son d'épées qui s'entrechoquent
 let fightButton = document.querySelector('.fight_button');
 let hoverFightSound = new Audio('./sounds/sword.mp3')
