@@ -12,6 +12,11 @@ body {
     padding: 0;
 }
 
+.main_title_container {
+    background-image: url(./images/bois_chaud.jpg);
+    background-size: cover;
+    border: solid 1px;
+}
 .main_title_text {
     font-size: 5vw;
 }
@@ -20,14 +25,16 @@ body {
     display: block;
     width: 80vw;
     border: solid 20px;
-    border-image: url(./images/background_stone.jpg);
+    border-image: url(./images/pierre_taillee.jpg);
     border-image-slice: 30;
-    border-image-repeat: stretch;
+    border-image-repeat: repeat;
     border-image-outset: 0;
     border-radius: 10px;
     background-color: hsl(224, 20%, 70%, 0.5);
     backdrop-filter: blur(3px);
-    padding: 20px;
+    box-shadow: inset 10px 10px 5px black, inset -10px -10px 5px black;
+    position: relative;
+    padding: 5px;
 }
 
 .opponents_columns {
@@ -35,16 +42,17 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
     justify-items: center;
+    background-image: url(./images/metal2.jpg);
+    background-size: cover;
+    background-position: 5%;
 }
 
 .critical_strike {
     background-color: maroon;
     color: white;
     padding: 10px;
-    width: 25vw;
     display: flex;
     font-weight: 900;
-    margin: auto;
     justify-content: center;
 }
 
@@ -56,23 +64,21 @@ body {
 
 .round_counter {
     font-weight: 900;
-    background-color: #324065;
-    color: white;
+    background-image: url(./images/metal2.jpg);
+    background-size: cover;
+    background-position: 5%;
+    color: black;
 }
 
 .opponent_killed {
-    margin: auto;
     background-color: black;
-    width: 25vw;
     padding: 10px;
     color: white;
 }
 
 .victory {
-    margin: auto;
     color: white;
     background-color: goldenrod;
-    width: 25vw;
     padding: 10px;
 }
 
@@ -85,11 +91,12 @@ select option:hover {
     font-family: 'Skyrim Medium';
     font-weight: 600;
     background-color: #324065;
-    background-image: url(./images/background.webp);
+    background-image: url(./images/metal2.jpg);
     background-position: 15%;
+    background-size: cover;
     border-width: 3px;
     border-style: solid;
-    border-image-source: url('./images/bordure.jpg');
+    border-image-source: url('./images/metal.jpg');
     border-image-slice: 30;
     border-image-repeat: stretch;
     border-image-outset: 0;
@@ -101,6 +108,18 @@ select option:hover {
 .fight_button:hover {
     background-color: #324095;
     cursor: url(images/Steel_Sword_mini.png), auto;
+}
+
+.fight_button_container {
+    background-image: url(./images/bois_chaud.jpg);
+    background-size: cover;
+    background-position: 5%;
+    
+}
+.event_in_fight {
+    background-image: url(./images/bois_chaud.jpg);
+    background-size: cover;
+    padding: 10px 0;
 }
 
 /*Ajout des polices thématiques*/

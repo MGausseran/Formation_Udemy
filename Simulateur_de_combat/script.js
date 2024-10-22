@@ -175,6 +175,7 @@ const fightResultsDiv = document.querySelector('.fight_results');
 function fight() {
 
     const fightSound = new Audio('./sounds/fusrohdah.mp3');
+    
     firstOpponentName = firstSubList.value;
     secondOpponentName = secondSubList.value;
 
@@ -216,7 +217,7 @@ function fight() {
                         fightResult += '<div class="critical_strike">CRITICAL STRIKE !</div>';
                     }
                     secondOpponentHealth -= firstOpponentmight;
-                    fightResult += firstOpponentName + ' attacks ' + secondOpponentName + ' and deals ' + firstOpponentmight + ' damages!<br><br>';
+                    fightResult += '<div class="event_in_fight">' + firstOpponentName + ' attacks ' + secondOpponentName + ' and deals ' + firstOpponentmight + ' damages!</div>';
                     firstOpponentmight = firstOpponent.might; //On réinitialise l'attaque à la valeur de base si il y a eu un bonus critique auparavant
                     if (secondOpponentHealth <= 0) { //On vérifie si l'adversaire a encore des points de vie
                         fightResult += '<div class="opponent_killed">' + secondOpponentName + ' is dead.</div>' + '<div class="victory">' + firstOpponentName + ' wins!</div>';
@@ -226,7 +227,7 @@ function fight() {
                     }
                 }
                 else {
-                    fightResult += secondOpponentName + ' dodges ! The attack from ' + firstOpponentName + ' misses...<br><br>';
+                    fightResult += '<div class="event_in_fight">' + secondOpponentName + ' dodges ! The attack from ' + firstOpponentName + ' misses...</div>';
                 }
                 round++;
             } else { //Si c'est 'Face', le second adversaire attaque
@@ -236,7 +237,7 @@ function fight() {
                         fightResult += '<div class="critical_strike">CRITICAL STRIKE !</div>';
                     }
                     firstOpponentHealth -= secondOpponentmight;
-                    fightResult += secondOpponentName + ' attacks ' + firstOpponentName + ' and deals ' + secondOpponentmight + ' damages!<br><br>';
+                    fightResult += '<div class="event_in_fight">' + secondOpponentName + ' attacks ' + firstOpponentName + ' and deals ' + secondOpponentmight + ' damages!</div>';
                     secondOpponentmight = secondOpponent.might;
                     if (firstOpponentHealth <= 0) { 
                         fightResult += '<div class="opponent_killed">' + firstOpponentName + ' is dead.</div>' + '<div class="victory">' + secondOpponentName + ' wins!<br>';
@@ -246,7 +247,7 @@ function fight() {
                     }
                 }
                 else {
-                    fightResult += firstOpponentName + ' dodges ! The attack from ' + secondOpponentName + ' misses...<br>';
+                    fightResult += '<div class="event_in_fight">' + firstOpponentName + ' dodges ! The attack from ' + secondOpponentName + ' misses...</div>';
                 }
                 round++;
             }
@@ -256,10 +257,34 @@ function fight() {
     }
 }
 
+//Evenements pour le déclenchement des différents sons
+
+//Son de bois qui craque
+let titleContainer = document.querySelector('.main_title_container');
+let fightContainer = document.querySelector('.fight_button_container');
+let eventContainer = document.querySelector('.fight_results');
+let woodSound = new Audio('./sounds/wood.mp3');
+titleContainer.addEventListener('click', () => {
+    woodSound.currentTime = 0;
+    woodSound.play();
+}) ;
+fightContainer.addEventListener('click', () => {
+    woodSound.currentTime = 0;
+    woodSound.play();
+}) ;
+eventContainer.addEventListener('click', (event) => {
+    // Vérifie si l'élément cliqué a la classe 'event_in_fight'
+    if (event.target.classList.contains('event_in_fight')) {
+        woodSound.currentTime = 0;
+        woodSound.play();
+    }
+});
+
+//Son d'épées qui s'entrechoquent
 let fightButton = document.querySelector('.fight_button');
-let hoverSound = new Audio('./sounds/sword.mp3')
+let hoverFightSound = new Audio('./sounds/sword.mp3')
 fightButton.addEventListener('mouseover', () => {
-    hoverSound.currentTime = 0; 
-    hoverSound.play(); 
+    hoverFightSound.currentTime = 0; 
+    hoverFightSound.play(); 
 });
 fightButton.addEventListener('click', fight);
