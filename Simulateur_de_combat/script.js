@@ -281,9 +281,14 @@ eventContainer.addEventListener('click', (event) => {
 });
 
 //Son de coup contre le métal
-opponentsContainer = document.querySelector('.opponents_columns');
+firstOpponentContainer = document.querySelector('.first_opponent_column .stats');
+secondOpponentContainer = document.querySelector('.second_opponent_column .stats');
 let metalSound = new Audio('./sounds/metal.mp3');
-opponentsContainer.addEventListener('click', () => {
+firstOpponentContainer.addEventListener('click', () => {
+    metalSound.currentTime=0;
+    metalSound.play();
+});
+secondOpponentContainer.addEventListener('click', () => {
     metalSound.currentTime=0;
     metalSound.play();
 });

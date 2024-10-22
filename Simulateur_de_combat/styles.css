@@ -8,7 +8,7 @@ body {
     object-fit: contain;
     display: flex;
     justify-content: center;
-    font-family: 'Skyrim Medium';
+    font-family: 'Cinzel Regular';
     padding: 0;
 }
 
@@ -20,11 +20,13 @@ body {
 }
 .main_title_text {
     font-size: 5vw;
+    font-family: 'Cinzel Medium';
+    color: snow;
 }
 
 .main_container {
     display: block;
-    width: 80vw;
+    width: 70vw;
     border: solid 20px;
     border-image: url(./images/pierre_taillee.jpg);
     border-image-slice: 30;
@@ -94,7 +96,8 @@ select option:hover {
 
 .fight_button {
     width: 10vw;
-    font-family: 'Skyrim Medium';
+    font-family: 'Cinzel Medium';
+    font-size: 2vw;
     font-weight: 600;
     background-color: #324065;
     background-image: url(./images/metal2.jpg);
@@ -106,9 +109,10 @@ select option:hover {
     border-image-slice: 30;
     border-image-repeat: stretch;
     border-image-outset: 0;
+    box-shadow: inset 5px 5px 5px black, inset -5px -5px 5px black;
     padding: 10px;
     color: white;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .fight_button:hover {
@@ -145,10 +149,60 @@ select option:hover {
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Cinzel Black';
+    src: url('./fonts/Cinzel-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel Bold';
+    src: url('./fonts/Cinzel-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel Extra Bold';
+    src: url('./fonts/Cinzel-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel Medium';
+    src: url('./fonts/Cinzel-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel Regular';
+    src: url('./fonts/Cinzel-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cinzel Semi-Bold';
+    src: url('./fonts/Cinzel-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* @font-face {
+    font-family: 'Cinzel';
+    src: url('./fonts/Cinzel-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+} */
+
+
 @media (max-width: 600px) {
 
     .main_container{
-        width: 75vw;
+        width: 65vw;
     }
 
     .opponents_columns {
