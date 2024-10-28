@@ -1,0 +1,32 @@
+.homepage {
+    padding: 20px;
+    text-align: center;
+    background-color:  #DF6249;
+    color: white;
+  }
+  
+  .homepage h2 {
+    font-size: 2.5rem;
+    font-family: 'Bree Serif';
+    font-weight: 300;
+  }
+  
+  .homepage p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+  }
+  
+  .homepage button {
+    background-color: #282c34;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .homepage button:hover {
+    background-color: #444;
+  }
+  

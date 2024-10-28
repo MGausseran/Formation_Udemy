@@ -11,6 +11,8 @@
 .header h1 {
   margin: 0;
   font-size: 2rem;
+  font-family: 'Bree Serif', serif;
+  font-weight: 300;
 }
 
 .menu-icon {
@@ -22,8 +24,7 @@
 }
 
 .dropdown-menu {
-  background-color: #DF6249;
-  
+  background-color: #fff;
   border-top: solid white 5px;
   position: absolute;
   top: 100%;
@@ -45,7 +46,9 @@
 }
 
 .dropdown-menu a {
-  color: white;
+
+  
+    color: #DF6249;
   text-decoration: none;
 }
 
@@ -57,3 +60,10 @@
 .dropdown-menu.open {
   display: flex;
 }
+
+@font-face {
+    font-family: 'Bree Serif';
+    src: url('../fonts/BreeSerif-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
