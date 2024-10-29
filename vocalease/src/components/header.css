@@ -61,6 +61,29 @@
   display: flex;
 }
 
+.main_menu {
+  background-color: #fff;
+  color: #DF6249;
+  padding: 20px;
+}
+
+.sub_menus {
+  text-align: left;
+  padding: 5px;
+  font-weight: 200;
+}
+
+.languages_list {
+  display: flex;
+}
+
+.languages_list ul {
+  margin: 0px;
+}
+.languages_list li {
+  margin-right: 20px;
+}
+
 @font-face {
     font-family: 'Bree Serif';
     src: url('../fonts/BreeSerif-Regular.ttf') format('truetype');
