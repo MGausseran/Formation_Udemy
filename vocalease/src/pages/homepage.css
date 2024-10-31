@@ -1,7 +1,7 @@
 .homepage {
     padding: 20px;
     text-align: center;
-    background-color:  #DF6249;
+    background-color:  #1d8a3a;
     color: white;
   }
   
@@ -15,18 +15,17 @@
     font-size: 1.2rem;
     margin: 20px 0;
   }
-  
-  .homepage button {
-    background-color: #282c34;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .homepage button:hover {
-    background-color: #444;
-  }
+
+.search_recipe_button{
+  display: flex;
+  margin: 20px auto;
+}
+
+.ingredients_list{
+  list-style: none;
+}
+
+.recipes_results{
+  list-style: none;
+}
   

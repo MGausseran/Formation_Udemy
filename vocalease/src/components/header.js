@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1>VocalEase</h1>
+      <h1>Fridgify</h1>
       <div className="menu-icon" onClick={toggleMenu}>
         &#9776; {/* Icône hamburger */}
       </div>

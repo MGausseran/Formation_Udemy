@@ -1,5 +1,5 @@
 .header {
-  background-color: #DF6249;
+  background-color: #1d8a3a;
   color: white;
   padding: 30px;
   text-align: center;
@@ -48,7 +48,7 @@
 .dropdown-menu a {
 
   
-    color: #DF6249;
+    color: #1d8a3a;
   text-decoration: none;
 }
 
@@ -63,7 +63,7 @@
 
 .main_menu {
   background-color: #fff;
-  color: #DF6249;
+  color: #1d8a3a;
   padding: 20px;
 }
 
