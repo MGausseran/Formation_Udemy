@@ -95,7 +95,6 @@ const Homepage = () => {
           {selectedRecipe && (
             <section className="recipe_details">
               <h3>{selectedRecipe.title}</h3>
-              
               <img className="recipe_picture" src={selectedRecipe.image} alt={selectedRecipe.title} />
               <h4>Ingredients:</h4>
               <ul className="ingredients_list">

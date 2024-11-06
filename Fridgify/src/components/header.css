@@ -1,5 +1,5 @@
 .header {
-  background-color: #1d8a3a;
+  background-color: #d90429;;
   color: white;
   padding: 30px;
   text-align: center;
@@ -17,74 +17,6 @@
   font-weight: 300;
 }
 
-.menu-icon {
-  font-size: 2rem;
-  cursor: pointer;
-  position: absolute;
-  right: 10px;
-  top: 30px;
-}
-
-.dropdown-menu {
-  background-color: #fff;
-  border-top: solid white 5px;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.3s ease;
-}
-
-.dropdown-menu ul {
-  list-style: none;
-  padding: 0;
-}
-
-.dropdown-menu li {
-  margin: 10px 0;
-}
-
-.dropdown-menu a {
-
-  
-    color: #1d8a3a;
-  text-decoration: none;
-}
-
-.dropdown-menu a:hover {
-  text-decoration: underline;
-}
-
-/* Menu ouvert */
-.dropdown-menu.open {
-  display: flex;
-}
-
-.main_menu {
-  background-color: #fff;
-  color: #1d8a3a;
-  padding: 20px;
-}
-
-.sub_menus {
-  text-align: left;
-  padding: 5px;
-  font-weight: 200;
-}
-
-.languages_list {
-  display: flex;
-}
-
-.languages_list ul {
-  margin: 0px;
-}
-.languages_list li {
-  margin-right: 20px;
-}
 
 @font-face {
     font-family: 'Bree Serif';
