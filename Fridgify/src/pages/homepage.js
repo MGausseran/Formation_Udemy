@@ -51,6 +51,10 @@ const Homepage = () => {
     }
   };
 
+  const cleanInstructions = (instructions) => {
+    return instructions.replace(/<\/?(ol|li)>/g, '').split('. ').map((step) => step.trim());
+  };
+
   return (
     <div>
       <Header />
@@ -96,6 +100,7 @@ const Homepage = () => {
             <section className="recipe_details">
               <h3>{selectedRecipe.title}</h3>
               <img className="recipe_picture" src={selectedRecipe.image} alt={selectedRecipe.title} />
+              
               <h4>Ingredients:</h4>
               <ul className="ingredients_list">
                 {selectedRecipe.extendedIngredients.map((ingredient) => (
@@ -104,11 +109,10 @@ const Homepage = () => {
               </ul>
               
               <div className="instructions">
-              <h4>Instructions:</h4>
-                {selectedRecipe.instructions.split('. ').map((step, index) => (
+                <h4>Instructions:</h4>
+                {cleanInstructions(selectedRecipe.instructions).map((step, index) => (
                   <p key={index}>{step}.</p>
                 ))}
-                
               </div>
             </section>
           )}
