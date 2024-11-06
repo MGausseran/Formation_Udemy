@@ -28,4 +28,31 @@
 .recipes_results{
   list-style: none;
 }
+
+.ingredients_list, .recipes_list {
+  list-style-type: none; 
+  padding: 0;
+}
+
+.recipes_list li {
+  cursor: pointer;
+  margin: 5px 0;
+}
+
+.recipes_list li:hover {
+  color: #007acc;
+}
+
+.instructions {
+  background-color: #ffffff;
+  color: #1d8a3a;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.instructions p {
+  margin-bottom: 10px; 
+}
+
   

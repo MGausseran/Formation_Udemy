@@ -83,10 +83,10 @@ const Homepage = () => {
           {recipes.length > 0 && (
             <section className="recipes_results">
               <h3>Recipes found:</h3>
-              <ul>
+              <ul className="recipes_list">
                 {recipes.map((recipe) => (
                   <li key={recipe.id} onClick={() => fetchRecipeDetails(recipe.id)}>
-                    {recipe.title} 
+                    {recipe.title}
                   </li>
                 ))}
               </ul>
@@ -96,14 +96,19 @@ const Homepage = () => {
             <section className="recipe_details">
               <h3>{selectedRecipe.title}</h3>
               <h4>Ingredients:</h4>
-              <ul>
+              <ul className="ingredients_list">
                 {selectedRecipe.extendedIngredients.map((ingredient) => (
                   <li key={ingredient.id}>{ingredient.original}</li>
                 ))}
               </ul>
               <h4>Instructions:</h4>
-              <p>{selectedRecipe.instructions}</p>
+              <div className="instructions">
+                {selectedRecipe.instructions.split('. ').map((step, index) => (
+                  <p key={index}>{step}.</p>
+                ))}
+                
               <img src={selectedRecipe.image} alt={selectedRecipe.title} />
+              </div>
             </section>
           )}
         </div>
