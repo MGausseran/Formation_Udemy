@@ -1,32 +1,50 @@
+.body {
+  margin: auto;
+}
 .homepage {
-    padding: 20px;
     text-align: center;
     background-color:  #1d8a3a;
     color: white;
+    justify-content: center;
+    margin: auto;
+    height: 100vh;
   }
   
   .homepage h2 {
     font-size: 2.5rem;
     font-family: 'Bree Serif';
     font-weight: 300;
+    margin: 0;
+    padding-top: 20px;
   }
   
   .homepage p {
     font-size: 1.2rem;
     margin: 20px 0;
   }
-
+  
 .search_recipe_button{
   display: flex;
   margin: 20px auto;
 }
 
+.recipe_picture {
+  width: 90vw;
+}
 .ingredients_list{
   list-style: none;
 }
 
 .recipes_results{
-  list-style: none;
+  list-style: none;  
+  background-color: #1d8a3a;
+  padding-bottom: 10px;
+}
+
+.recipe_details{
+  background-color: #fff;
+  color: #1d8a3a;
+  padding-top: 10px;
 }
 
 .ingredients_list, .recipes_list {
@@ -36,7 +54,8 @@
 
 .recipes_list li {
   cursor: pointer;
-  margin: 5px 0;
+  color: white;
+  padding-bottom: 5px;
 }
 
 .recipes_list li:hover {
@@ -48,11 +67,25 @@
   color: #1d8a3a;
   padding: 15px;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .instructions p {
   margin-bottom: 10px; 
+  font-size: 1rem;
 }
 
+.recipe_details h3 {
+  font-size: 2.5rem;
+
+}
+
+@media screen and (min-width: 600px) {
+  .recipe_picture {
+    width: 600px;
+  }
+  .instructions{
+    width: 600px;
+    margin: auto;
+  } 
+}
   

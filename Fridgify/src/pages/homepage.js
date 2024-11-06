@@ -95,19 +95,21 @@ const Homepage = () => {
           {selectedRecipe && (
             <section className="recipe_details">
               <h3>{selectedRecipe.title}</h3>
+              
+              <img className="recipe_picture" src={selectedRecipe.image} alt={selectedRecipe.title} />
               <h4>Ingredients:</h4>
               <ul className="ingredients_list">
                 {selectedRecipe.extendedIngredients.map((ingredient) => (
                   <li key={ingredient.id}>{ingredient.original}</li>
                 ))}
               </ul>
-              <h4>Instructions:</h4>
+              
               <div className="instructions">
+              <h4>Instructions:</h4>
                 {selectedRecipe.instructions.split('. ').map((step, index) => (
                   <p key={index}>{step}.</p>
                 ))}
                 
-              <img src={selectedRecipe.image} alt={selectedRecipe.title} />
               </div>
             </section>
           )}
